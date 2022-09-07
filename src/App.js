@@ -27,7 +27,8 @@ function App() {
           leaveToClassName="hidden"
           hideOnOutsideClick
         >
-          <a href="/#" 
+          {/* eslint-disable-next-line*/}
+          <a
             ref={rootBtnRef}
             className="cursor-pointer block lg:hidden text-700"
           >
@@ -47,7 +48,8 @@ function App() {
                 leaveActiveClassName="fadeout"
                 hideOnOutsideClick
               >
-                <a href="/#" 
+                {/* eslint-disable-next-line*/}
+                <a 
                   ref={btnRef2}
                   className="p-ripple flex px-0 lg:px-5 py-3 align-items-center hover:text-blue-600 font-medium transition-colors transition-duration-150 w-full"
                 >
@@ -58,7 +60,8 @@ function App() {
               </StyleClass>
               <ul className="list-none p-0 m-0 border-round shadow-0 lg:shadow-2 lg:absolute surface-overlay hidden origin-top w-full lg:w-15rem">
                 <li>
-                  <a href="/#" className="p-ripple flex p-3 align-items-center hover:surface-50 transition-colors transition-duration-150 w-full" onClick={() => {
+                {/* eslint-disable-next-line*/}
+                  <a className="p-ripple flex p-3 align-items-center hover:surface-50 transition-colors transition-duration-150 w-full" onClick={() => {
                     window.open("https://aquacode.gumroad.com/l/ViWjz");}}>
                     <i className="pi pi-shield text-2xl mr-2 text-white"></i>
                     <span>Software Development eBook</span>
@@ -68,13 +71,15 @@ function App() {
               </ul>
             </li>
             <li>
-              <a href="/#" className="p-ripple flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150" onClick={scrollTo}>
+            {/* eslint-disable-next-line*/}
+              <a className="p-ripple flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150" onClick={scrollTo}>
                 <span>Newsletter</span>
                 <Ripple />
               </a>
             </li>
             <li>
-              <a href="/#" className="p-ripple flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150">
+            {/* eslint-disable-next-line*/}
+              <a className="p-ripple flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150">
                 <span>Links</span>
                 <Ripple />
               </a>
@@ -120,128 +125,57 @@ function App() {
               <i className="pi pi-linkedin text-2xl"></i>
             </a>
   </div> 
+  
         </div>
+        
       </div>
-      <div className="surface-ground px-4 py-8 md:px-6 lg:px-8">
-        <div>
-          <div className="font-bold text-4xl text-900 mb-5 text-center">
-            Featured Articles
-          </div>
-          <div className="grid nogutter">
-            <div className="col-12 lg:col-4 p-3">
-              <div className="shadow-2 border-round h-full surface-card">
-                <img
-                  src="assets/images/blocks/blog/blog-1.jpg"
-                  alt="blog-1"
-                  className="block w-full border-round-top"
-                />
-                <div className="p-4">
-                  <span className="block font-medium text-blue-600 mb-3">
-                    Crime
-                  </span>
-                  <div className="text-xl text-900 font-medium mb-3 line-height-3 ">
-                    Fugitive flamingo spotted in Florida
-                  </div>
-                  <div className="text-sm line-height-3 mb-3 text-700">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </div>
-                  <div className="flex">
-                    <Avatar
-                      image="assets/images/blocks/avatars/circle/avatar-f-1.png"
-                      shape="circle"
-                    />
-                    <div className="ml-2">
-                      <div className="text-xs font-bold text-900 mb-1">
-                        Anna Lane
-                      </div>
-                      <div className="text-xs flex align-items-center text-700">
-                        <i className="pi pi-calendar mr-1 text-xs"></i>
-                        <span>Apr 5, 2021</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 lg:col-4 p-3">
-              <div className="shadow-2 border-round h-full surface-card">
-                <img
-                  src="assets/images/blocks/blog/blog-2.jpg"
-                  alt="blog-2"
-                  className="block w-full border-round-top"
-                />
-                <div className="p-4 flex flex-column">
-                  <span className="block font-medium text-blue-600 mb-3">
-                    Wildlife
-                  </span>
-                  <div className="text-xl text-900 font-medium mb-3 line-height-3 ">
-                    Journey to the Ends of the Earth
-                  </div>
-                  <div className="text-sm line-height-3 mb-3 text-700">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </div>
-                  <div className="flex">
-                    <Avatar
-                      image="assets/images/blocks/avatars/circle/avatar-f-2.png"
-                      shape="circle"
-                    />
-                    <div className="ml-2">
-                      <div className="text-xs font-bold text-900 mb-1">
-                        Arlene McCoy
-                      </div>
-                      <div className="text-xs flex align-items-center text-700">
-                        <i className="pi pi-calendar mr-1 text-xs"></i>
-                        <span>Apr 6, 2021</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 lg:col-4 p-3">
-              <div className="shadow-2 border-round h-full surface-card">
-                <img
-                  src="assets/images/blocks/blog/blog-3.jpg"
-                  alt="blog-3"
-                  className="block w-full border-round-top"
-                />
-                <div className="p-4">
-                  <span className="block font-medium text-blue-600 mb-3">
-                    Marie
-                  </span>
-                  <div className="text-xl text-900 font-medium mb-3 line-height-3 ">
-                    'Real and imminent' extinction risk
-                  </div>
-                  <div className="text-sm line-height-3 mb-3 text-700">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </div>
-                  <div className="flex">
-                    <Avatar
-                      image="assets/images/blocks/avatars/circle/avatar-f-3.png"
-                      shape="circle"
-                    />
-                    <div className="ml-2">
-                      <div className="text-xs font-bold text-900 mb-1">
-                        Diane Miles
-                      </div>
-                      <div className="text-xs flex align-items-center text-700">
-                        <i className="pi pi-calendar mr-1 text-xs"></i>
-                        <span>Apr 9, 2021</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      
+<div className="surface-section px-4 py-8 md:px-6 lg:px-8">
+    <div className="grid">
+        <div className="col-12 md:col-6">
+            <img src="new-profile.jpg" alt="Image" className="w-partial" />
         </div>
-      </div>
+        <div className="col-12 md:col-6 md:pl-6">
+            <div className="p-3 inline-flex align-items-center surface-900 text-0 mb-4 font-medium" style={{ borderRadius: '30px' }}>
+                <i className="pi pi-star-fill mr-2"></i>
+                <span>Software Development</span>
+            </div>
+            <div className="text-4xl font-bold text-900 mb-3">First Principles</div>
+            <div className="text-700 mb-5 line-height-3 mb-5"></div>
+
+            <div className="flex align-items-center mb-4">
+                <i className="pi pi-check text-green-600 mr-3"></i>
+                <div>
+                    <div className="text-900 font-medium mb-2">Divide and Conquer</div>
+                    <div className="text-700 text-sm">Make problems smaller and simpler</div>
+                </div>
+            </div>
+            <div className="flex align-items-center mb-4">
+                <i className="pi pi-check text-green-600 mr-3"></i>
+                <div>
+                    <div className="text-900 font-medium mb-2">Trial and Error</div>
+                    <div className="text-700 text-sm">Tinker, play around, learn</div>
+                </div>
+            </div>
+            <div className="flex align-items-center mb-4">
+                <i className="pi pi-check text-green-600 mr-3"></i>
+                <div>
+                    <div className="text-900 font-medium mb-2">Big Rocks First</div>
+                    <div className="text-700 text-sm">Focus on hard stuff and then easier things</div>
+                </div>
+            </div>
+            <div className="flex align-items-center">
+                <i className="pi pi-check text-green-600 mr-3"></i>
+                <div>
+                    <div className="text-900 font-medium mb-2">Complete One Piece First</div>
+                    <div className="text-700 text-sm">Complete at least one part of the whole instead of leaving many unfinished things</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+      
 
 
       <div ref={newsLetterRef} className="surface-section px-4 py-8 md:px-6 lg:px-8">
@@ -252,7 +186,8 @@ function App() {
             <InputText className="appearance-none bg-blue-600 border-1 border-blue-400 py-3 pl-3 w-full p-component text-indigo-100 outline-none" style={{ borderRadius: '35px', paddingRight: '6rem' }} value="Your email" />
             <Button type="button" className="absolute" label="Join" style={{ borderRadius: '35px', top: '.5rem', right: '.5rem', bottom: '.5rem' }} />
         </div>
-        <span className="text-blue-200">We ensure to protect your privacy. <a href="/#" tabIndex="0" className="cursor-pointer text-white">Privacy Policy</a></span>
+        {/* eslint-disable-next-line*/}
+        <span className="text-blue-200">We ensure to protect your privacy.  <a tabIndex="0" className="cursor-pointer text-white">Privacy Policy</a></span>
     </div>
 </div>
     
