@@ -4,20 +4,19 @@ import { Button } from "primereact/button";
 import { StyleClass } from "primereact/styleclass";
 import { Ripple } from "primereact/ripple";
 import { InputText } from "primereact/inputtext";
-//import { InputSwitch } from "primereact/inputswitch";
 import { InputTextarea } from "primereact/inputtextarea";
-//import { Avatar } from "primereact/avatar";
 
 function App() {
-  //const [value, setValue] = useState(false);
   const rootBtnRef = useRef(null);
   const newsLetterRef = useRef(null);
   const btnRef2 = useRef(null);
 
-  const scrollTo = () => { newsLetterRef.current.scrollIntoView()}
+  const scrollTo = () => {
+    newsLetterRef.current.scrollIntoView();
+  };
 
   return (
-    <>  
+    <>
       <div className="surface-overlay py-3 px-6 shadow-2 flex align-items-center justify-content-between relative lg:static">
         <img src="logo.png" alt="hyper" height={50} />
         <StyleClass
@@ -49,7 +48,7 @@ function App() {
                 hideOnOutsideClick
               >
                 {/* eslint-disable-next-line*/}
-                <a 
+                <a
                   ref={btnRef2}
                   className="p-ripple flex px-0 lg:px-5 py-3 align-items-center hover:text-blue-600 font-medium transition-colors transition-duration-150 w-full"
                 >
@@ -60,9 +59,13 @@ function App() {
               </StyleClass>
               <ul className="list-none p-0 m-0 border-round shadow-0 lg:shadow-2 lg:absolute surface-overlay hidden origin-top w-full lg:w-15rem">
                 <li>
-                {/* eslint-disable-next-line*/}
-                  <a className="p-ripple flex p-3 align-items-center hover:surface-50 transition-colors transition-duration-150 w-full" onClick={() => {
-                    window.open("https://aquacode.gumroad.com/l/ViWjz");}}>
+                  {/* eslint-disable-next-line*/}
+                  <a
+                    className="p-ripple flex p-3 align-items-center hover:surface-50 transition-colors transition-duration-150 w-full"
+                    onClick={() => {
+                      window.open("https://aquacode.gumroad.com/l/ViWjz");
+                    }}
+                  >
                     <i className="pi pi-shield text-2xl mr-2 text-white"></i>
                     <span>Software Development eBook</span>
                     <Ripple />
@@ -71,14 +74,17 @@ function App() {
               </ul>
             </li>
             <li>
-            {/* eslint-disable-next-line*/}
-              <a className="p-ripple flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150" onClick={scrollTo}>
+              {/* eslint-disable-next-line*/}
+              <a
+                className="p-ripple flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150"
+                onClick={scrollTo}
+              >
                 <span>Newsletter</span>
                 <Ripple />
               </a>
             </li>
             <li>
-            {/* eslint-disable-next-line*/}
+              {/* eslint-disable-next-line*/}
               <a className="p-ripple flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150">
                 <span>Links</span>
                 <Ripple />
@@ -89,15 +95,13 @@ function App() {
       </div>
       <div className="relative p-6 overflow-hidden">
         <img
-          src="IMG_5754.jpg"
+          src="lovers-key-storm.jpg"
           alt="hero-2"
           className="absolute top-0 left-0 w-auto h-full block md:w-full"
         />
 
         <div className="text-center my-6 relative">
-          <div className="text-6xl text- font-bold mb-1">
-            AQUACODE Software
-          </div>
+          <div className="text-6xl text- font-bold mb-1">AQUACODE Software</div>
           {/*
           <div className="text-6xl text-primary font-bold mb-4">
             Today's Generation
@@ -121,93 +125,145 @@ function App() {
             <a href="https://twitter.com/aquacode" className="text-white mr-3">
               <i className="pi pi-twitter text-2xl"></i>
             </a>
-            <a href="https://www.linkedin.com/in/mikebrizic/" className="text-white">
+            <a
+              href="https://www.linkedin.com/in/mikebrizic/"
+              className="text-white"
+            >
               <i className="pi pi-linkedin text-2xl"></i>
             </a>
-  </div> 
-  
+          </div>
         </div>
-        
       </div>
-      
-<div className="surface-section px-4 py-8 md:px-6 lg:px-8">
-    <div className="grid">
-        <div className="col-12 md:col-6">
-            <img src="new-profile.jpg" alt="Michael Brizic" className="w-partial" />
-        </div>
-        <div className="col-12 md:col-6 md:pl-6">
-            <div className="p-3 inline-flex align-items-center surface-900 text-0 mb-4 font-medium" style={{ borderRadius: '30px' }}>
-                <i className="pi pi-star-fill mr-2"></i>
-                <span>Software Development</span>
+
+      <div className="surface-section px-4 py-8 md:px-6 lg:px-8">
+        <div className="grid">
+          <div className="col-12 md:col-6">
+            <img
+              src="new-profile.jpg"
+              alt="Michael Brizic"
+              className="w-partial"
+            />
+          </div>
+          <div className="col-12 md:col-6 md:pl-6">
+            <div
+              className="p-3 inline-flex align-items-center surface-900 text-0 mb-4 font-medium"
+              style={{ borderRadius: "30px" }}
+            >
+              <i className="pi pi-star-fill mr-2"></i>
+              <span>Software Development</span>
             </div>
-            <div className="text-4xl font-bold text-900 mb-3">First Principles</div>
+            <div className="text-4xl font-bold text-900 mb-3">
+              First Principles
+            </div>
             <div className="text-700 mb-5 line-height-3 mb-5"></div>
 
             <div className="flex align-items-center mb-4">
-                <i className="pi pi-check text-green-600 mr-3"></i>
-                <div>
-                    <div className="text-900 font-medium mb-2">Divide and Conquer</div>
-                    <div className="text-700 text-sm">Make problems smaller and simpler</div>
+              <i className="pi pi-check text-green-600 mr-3"></i>
+              <div>
+                <div className="text-900 font-medium mb-2">
+                  Divide and Conquer
                 </div>
+                <div className="text-700 text-sm">
+                  Make problems smaller and simpler
+                </div>
+              </div>
             </div>
             <div className="flex align-items-center mb-4">
-                <i className="pi pi-check text-green-600 mr-3"></i>
-                <div>
-                    <div className="text-900 font-medium mb-2">Trial and Error</div>
-                    <div className="text-700 text-sm">Tinker, play around, learn</div>
+              <i className="pi pi-check text-green-600 mr-3"></i>
+              <div>
+                <div className="text-900 font-medium mb-2">Trial and Error</div>
+                <div className="text-700 text-sm">
+                  Tinker, play around, learn
                 </div>
+              </div>
             </div>
             <div className="flex align-items-center mb-4">
-                <i className="pi pi-check text-green-600 mr-3"></i>
-                <div>
-                    <div className="text-900 font-medium mb-2">Big Rocks First</div>
-                    <div className="text-700 text-sm">Focus on hard stuff and then easier things</div>
+              <i className="pi pi-check text-green-600 mr-3"></i>
+              <div>
+                <div className="text-900 font-medium mb-2">Big Rocks First</div>
+                <div className="text-700 text-sm">
+                  Focus on hard stuff and then easier things
                 </div>
+              </div>
             </div>
             <div className="flex align-items-center">
-                <i className="pi pi-check text-green-600 mr-3"></i>
-                <div>
-                    <div className="text-900 font-medium mb-2">Complete One Piece First</div>
-                    <div className="text-700 text-sm">Complete at least one part of the whole instead of leaving many unfinished things</div>
+              <i className="pi pi-check text-green-600 mr-3"></i>
+              <div>
+                <div className="text-900 font-medium mb-2">
+                  Complete One Piece First
                 </div>
+                <div className="text-700 text-sm">
+                  Complete at least one part of the whole instead of leaving
+                  many unfinished things
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</div>
-    
-      
+      </div>
 
-
-      <div ref={newsLetterRef} className="surface-section px-4 py-8 md:px-6 lg:px-8">
-    <div className="py-6 px-3 md:px-6shadow-2 text-center" style={{ background: 'linear-gradient(180deg, #93C5FD 0%, #3F51B5 100%)', borderRadius: '1rem' }}>
-        <div className="text-white font-bold text-2xl mb-3">Stay in contact with us</div>
-        <span className="block text-indigo-100 font-medium text-xl">Subscribe for our newsletter so that you don't miss any updates.</span>
-        <div className="mt-5 mb-3 relative sm:w-20rem mx-auto">
-            <InputText className="appearance-none bg-blue-600 border-1 border-blue-400 py-3 pl-3 w-full p-component text-indigo-100 outline-none" style={{ borderRadius: '35px', paddingRight: '6rem' }} value="Your email" />
-            <Button type="button" className="absolute" label="Join" style={{ borderRadius: '35px', top: '.5rem', right: '.5rem', bottom: '.5rem' }} />
+      <div
+        ref={newsLetterRef}
+        className="surface-section px-4 py-8 md:px-6 lg:px-8"
+      >
+        <div
+          className="py-6 px-3 md:px-6shadow-2 text-center"
+          style={{
+            background: "linear-gradient(180deg, #93C5FD 0%, #3F51B5 100%)",
+            borderRadius: "1rem",
+          }}
+        >
+          <div className="text-white font-bold text-2xl mb-3">
+            Stay in contact with us
+          </div>
+          <span className="block text-indigo-100 font-medium text-xl">
+            Subscribe for our newsletter so that you don't miss any updates.
+          </span>
+          <div className="mt-5 mb-3 relative sm:w-20rem mx-auto">
+            <InputText
+              className="appearance-none bg-blue-600 border-1 border-blue-400 py-3 pl-3 w-full p-component text-indigo-100 outline-none"
+              style={{ borderRadius: "35px", paddingRight: "6rem" }}
+              value="Your email"
+            />
+            <Button
+              type="button"
+              className="absolute"
+              label="Join"
+              style={{
+                borderRadius: "35px",
+                top: ".5rem",
+                right: ".5rem",
+                bottom: ".5rem",
+              }}
+            />
+          </div>
+          
+          <span className="text-blue-200">
+            We ensure to protect your privacy.{" "}
+            {/* eslint-disable-next-line*/}
+            <a tabIndex="0" className="cursor-pointer text-white">
+              Privacy Policy
+            </a>
+          </span>
         </div>
-        {/* eslint-disable-next-line*/}
-        <span className="text-blue-200">We ensure to protect your privacy.  <a tabIndex="0" className="cursor-pointer text-white">Privacy Policy</a></span>
-    </div>
-</div>
-    
-    
+      </div>
+
       <div className="surface-ground">
         <div className="grid grid-nogutter">
           <div
             className="col-12 md:col-6 bg-no-repeat bg-cover p-8"
             style={{
-              backgroundImage:
-                "url('20140928_085228.jpg')",
+              backgroundImage: "url('chi-gray.jpg')",
             }}
           >
             <div className="text-white text-2xl font-medium mb-6">
               Contact Us
             </div>
             <div className="text-gray-200 line-height-3 mb-6">
-              We look forward to connecting with you!<br />
-              Please send us your contact information and a brief message
-              and we will reply as soon as possible.{" "}
+              We look forward to connecting with you!
+              <br />
+              Please send us your contact information and a brief message and we
+              will reply as soon as possible.{" "}
             </div>
             <ul className="list-none p-0 m-0 mt-6 text-white">
               <li className="flex align-items-center mb-3">
@@ -300,7 +356,8 @@ function App() {
                 Chicago, IL 60614
               </div>
               <div className="text-white mb-3">
-                <i className="pi pi-phone border-round p-1 mr-2"></i>+1 219 595 2633
+                <i className="pi pi-phone border-round p-1 mr-2"></i>+1 219 595
+                2633
               </div>
               <div className="text-white mb-3">
                 <i className="pi pi-inbox border-round p-1 mr-2"></i>
