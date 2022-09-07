@@ -6,7 +6,7 @@ import { Ripple } from "primereact/ripple";
 import { InputText } from "primereact/inputtext";
 //import { InputSwitch } from "primereact/inputswitch";
 import { InputTextarea } from "primereact/inputtextarea";
-import { Avatar } from "primereact/avatar";
+//import { Avatar } from "primereact/avatar";
 
 function App() {
   //const [value, setValue] = useState(false);
@@ -133,7 +133,7 @@ function App() {
 <div className="surface-section px-4 py-8 md:px-6 lg:px-8">
     <div className="grid">
         <div className="col-12 md:col-6">
-            <img src="new-profile.jpg" alt="Image" className="w-partial" />
+            <img src="new-profile.jpg" className="w-partial" />
         </div>
         <div className="col-12 md:col-6 md:pl-6">
             <div className="p-3 inline-flex align-items-center surface-900 text-0 mb-4 font-medium" style={{ borderRadius: '30px' }}>
