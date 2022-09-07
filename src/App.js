@@ -1,15 +1,15 @@
 import "./App.css";
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { Button } from "primereact/button";
 import { StyleClass } from "primereact/styleclass";
 import { Ripple } from "primereact/ripple";
 import { InputText } from "primereact/inputtext";
-import { InputSwitch } from "primereact/inputswitch";
+//import { InputSwitch } from "primereact/inputswitch";
 import { InputTextarea } from "primereact/inputtextarea";
 import { Avatar } from "primereact/avatar";
 
 function App() {
-  const [value, setValue] = useState(false);
+  //const [value, setValue] = useState(false);
   const rootBtnRef = useRef(null);
   const newsLetterRef = useRef(null);
   const btnRef2 = useRef(null);
@@ -27,7 +27,7 @@ function App() {
           leaveToClassName="hidden"
           hideOnOutsideClick
         >
-          <a
+          <a href="/#" 
             ref={rootBtnRef}
             className="cursor-pointer block lg:hidden text-700"
           >
@@ -47,7 +47,7 @@ function App() {
                 leaveActiveClassName="fadeout"
                 hideOnOutsideClick
               >
-                <a
+                <a href="/#" 
                   ref={btnRef2}
                   className="p-ripple flex px-0 lg:px-5 py-3 align-items-center hover:text-blue-600 font-medium transition-colors transition-duration-150 w-full"
                 >
@@ -58,7 +58,7 @@ function App() {
               </StyleClass>
               <ul className="list-none p-0 m-0 border-round shadow-0 lg:shadow-2 lg:absolute surface-overlay hidden origin-top w-full lg:w-15rem">
                 <li>
-                  <a className="p-ripple flex p-3 align-items-center hover:surface-50 transition-colors transition-duration-150 w-full" onClick={() => {
+                  <a href="/#" className="p-ripple flex p-3 align-items-center hover:surface-50 transition-colors transition-duration-150 w-full" onClick={() => {
                     window.open("https://aquacode.gumroad.com/l/ViWjz");}}>
                     <i className="pi pi-shield text-2xl mr-2 text-white"></i>
                     <span>Software Development eBook</span>
@@ -68,13 +68,13 @@ function App() {
               </ul>
             </li>
             <li>
-              <a className="p-ripple flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150" onClick={scrollTo}>
+              <a href="/#" className="p-ripple flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150" onClick={scrollTo}>
                 <span>Newsletter</span>
                 <Ripple />
               </a>
             </li>
             <li>
-              <a className="p-ripple flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150">
+              <a href="/#" className="p-ripple flex px-0 lg:px-5 py-3 hover:text-blue-600 font-medium transition-colors transition-duration-150">
                 <span>Links</span>
                 <Ripple />
               </a>
@@ -252,7 +252,7 @@ function App() {
             <InputText className="appearance-none bg-blue-600 border-1 border-blue-400 py-3 pl-3 w-full p-component text-indigo-100 outline-none" style={{ borderRadius: '35px', paddingRight: '6rem' }} value="Your email" />
             <Button type="button" className="absolute" label="Join" style={{ borderRadius: '35px', top: '.5rem', right: '.5rem', bottom: '.5rem' }} />
         </div>
-        <span className="text-blue-200">We ensure to protect your privacy. <a tabIndex="0" className="cursor-pointer text-white">Privacy Policy</a></span>
+        <span className="text-blue-200">We ensure to protect your privacy. <a href="/#" tabIndex="0" className="cursor-pointer text-white">Privacy Policy</a></span>
     </div>
 </div>
     
