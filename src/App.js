@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Button } from "primereact/button";
 import { StyleClass } from "primereact/styleclass";
 import { Ripple } from "primereact/ripple";
@@ -7,9 +7,38 @@ import { InputText } from "primereact/inputtext";
 import { InputTextarea } from "primereact/inputtextarea";
 
 function App() {
+
   const rootBtnRef = useRef(null);
   const newsLetterRef = useRef(null);
   const btnRef2 = useRef(null);
+
+  const [subscribeFirstName, setFirstName] = useState("");
+  const [subscribeEmail, setEmail] = useState("");
+  const [contactUsFirstName, setContactUsFirstName] = useState("");
+  const [contactUsLastName, setContactUsLastName] = useState("");
+  const [contactUsEmail, setContactUsEmail] = useState("");
+  const [contactUsMessage, setContactUsMessage] = useState("");
+
+  const subscribeToNewsletter = () => {
+    const xhr = new XMLHttpRequest();
+      xhr.open("POST", '/.netlify/functions/subscribe-convertkit', true);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.send(JSON.stringify({
+        firstName: subscribeFirstName,
+        email: subscribeEmail
+    }));
+  };
+
+  const sendEmail = () => {
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", '/.netlify/functions/send-email', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+      name: contactUsFirstName + ' ' + contactUsLastName,
+      email: contactUsEmail,
+      details: contactUsMessage
+    }));
+  }
 
   const scrollTo = () => {
     newsLetterRef.current.scrollIntoView();
@@ -116,7 +145,7 @@ function App() {
           <Button label="Learn More" type="button" />
 
           <p className="text-sm mt-4 mb-4 line-height-3 text-white">
-            Github, Twitter or LinkedIn
+            Github, Twitter, LinkedIn, Instagram
           </p>
           <div className="flex justify-content-center align-items-center">
             <a href="https://github.com/aquacode" className="text-white mr-3">
@@ -127,9 +156,15 @@ function App() {
             </a>
             <a
               href="https://www.linkedin.com/in/mikebrizic/"
-              className="text-white"
+              className="text-white mr-3"
             >
               <i className="pi pi-linkedin text-2xl"></i>
+            </a>
+            <a
+              href="https://instagram.com/aquacode"
+              className="text-white"
+            >
+              <i className="pi pi-instagram text-2xl"></i>
             </a>
           </div>
         </div>
@@ -214,20 +249,29 @@ function App() {
           }}
         >
           <div className="text-white font-bold text-2xl mb-3">
-            Stay in contact with us
+            Stay in contact
           </div>
           <span className="block text-indigo-100 font-medium text-xl">
-            Subscribe for our newsletter so that you don't miss any updates.
+            Subscribe to the newsletter for updates
           </span>
           <div className="mt-5 mb-3 relative sm:w-20rem mx-auto">
+          <InputText
+              className="appearance-none bg-blue-600 border-1 border-blue-400 py-3 pl-3 w-full p-component text-indigo-100 outline-none"
+              style={{borderRadius: "35px", paddingRight: "6rem", marginBottom: ".5rem"}}
+              placeholder="First name"
+              value={subscribeFirstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
             <InputText
               className="appearance-none bg-blue-600 border-1 border-blue-400 py-3 pl-3 w-full p-component text-indigo-100 outline-none"
               style={{ borderRadius: "35px", paddingRight: "6rem" }}
-              value="Your email"
+              placeholder="Your email"
+              value={subscribeEmail}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <Button
               type="button"
-              className="absolute"
+              className=""
               label="Join"
               style={{
                 borderRadius: "35px",
@@ -235,15 +279,14 @@ function App() {
                 right: ".5rem",
                 bottom: ".5rem",
               }}
+              onClick={() => subscribeToNewsletter()}
             />
           </div>
+          <div>
           
+          </div>
           <span className="text-blue-200">
-            We ensure to protect your privacy.{" "}
-            {/* eslint-disable-next-line*/}
-            <a tabIndex="0" className="cursor-pointer text-white">
-              Privacy Policy
-            </a>
+            I will never share your personal information because I'm not a jerk.{" "}
           </span>
         </div>
       </div>
@@ -288,6 +331,8 @@ function App() {
                   type="text"
                   className="py-3 px-2 text-lg"
                   placeholder="First Name"
+                  value={contactUsFirstName}
+                  onChange={(e) => setContactUsFirstName(e.target.value)}
                 />
               </div>
               <div className="field col-12 lg:col-6 p-float-label mb-4">
@@ -296,6 +341,8 @@ function App() {
                   type="text"
                   className="py-3 px-2 text-lg"
                   placeholder="Last Name"
+                  value={contactUsLastName}
+                  onChange={(e) => setContactUsLastName(e.target.value)}
                 />
               </div>
               <div className="field col-12 mb-4">
@@ -304,14 +351,8 @@ function App() {
                   type="text"
                   className="py-3 px-2 text-lg"
                   placeholder="Email"
-                />
-              </div>
-              <div className="field col-12 mb-4">
-                <InputText
-                  id="phone"
-                  type="text"
-                  className="py-3 px-2 text-lg"
-                  placeholder="Phone"
+                  value={contactUsEmail}
+                  onChange={(e) => setContactUsEmail(e.target.value)}
                 />
               </div>
               <div className="field col-12 mb-4">
@@ -321,6 +362,8 @@ function App() {
                   autoResize
                   className="py-3 px-2 text-lg"
                   placeholder="Message"
+                  value={contactUsMessage}
+                  onChange={(e) => setContactUsMessage(e.target.value)}
                 />
               </div>
               <div className="col-12 text-right">
@@ -329,6 +372,7 @@ function App() {
                   label="Submit"
                   icon="pi pi-envelope"
                   className="px-5 py-3 w-auto"
+                  onClick={() => sendEmail()}
                 />
               </div>
             </div>

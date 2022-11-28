@@ -3,15 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
+    "node-fetch": "^2.6.7",
     "primeflex": "^3.2.0",
     "primeicons": "^5.0.0",
     "primereact": "^8.1.1",
+    "process": "^0.11.10",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
+    "sendmail": "^1.6.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
